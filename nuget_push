@@ -1,0 +1,3 @@
+ dotnet pack --configuration Release
+ 
+ dotnet nuget push bin/Release/AspNetCore.JobQueue.1.0.0.nupkg --api-key oy2kb4rf5mph7auddfrqhbqaatvrmxquxkdfzyatpjej2e --source https://api.nuget.org/v3/index.json

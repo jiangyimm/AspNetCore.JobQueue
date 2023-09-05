@@ -4,6 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>AspNetCore.JobQueue</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Jiangyi</Authors>
+    <Company>Jiangyi</Company>
+    <PackageDescription>JobQueue For Net7</PackageDescription>
+    <RepositoryUrl>https://github.com/jiangyimm/AspNetCore.JobQueue</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
