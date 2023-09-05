@@ -148,6 +148,7 @@ internal sealed class JobQueue<TJob, TStorageRecord, TStorageProvider> : JobQueu
                 try
                 {
                     record.IsComplete = true;
+                    record.ExecuteAt = DateTime.Now;
                     await _storage.MarkJobAsCompleteAsync(record, _appCancellation);
                     break;
                 }
