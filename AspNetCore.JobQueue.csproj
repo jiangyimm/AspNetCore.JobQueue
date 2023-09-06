@@ -1,21 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>AspNetCore.JobQueue</PackageId>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
     <Authors>Jiangyi</Authors>
     <Company>Jiangyi</Company>
-    <PackageDescription>JobQueue For Net7</PackageDescription>
+    <PackageDescription>JobQueue by netstandard2.0</PackageDescription>
     <RepositoryUrl>https://github.com/jiangyimm/AspNetCore.JobQueue</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+    <None Include="docs\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>

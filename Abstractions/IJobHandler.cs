@@ -1,10 +1,14 @@
-namespace AspNetCore.JobQueue.Abstractions;
+using System.Threading;
+using System.Threading.Tasks;
 
-/// <summary>
-/// Represents a job handler.
-/// </summary>
-/// <typeparam name="TJob"></typeparam>
-public interface IJobHandler<TJob> where TJob : IJob
+namespace AspNetCore.JobQueue.Abstractions
 {
-    Task ExecuteAsync(TJob job, CancellationToken ct);
+    /// <summary>
+    /// Represents a job handler.
+    /// </summary>
+    /// <typeparam name="TJob"></typeparam>
+    public interface IJobHandler<TJob> where TJob : IJob
+    {
+        Task ExecuteAsync(TJob job, CancellationToken ct);
+    }
 }
