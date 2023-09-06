@@ -23,7 +23,7 @@ namespace AspNetCore.JobQueue.Abstractions
         /// <summary>
         /// 实际在此时间执行
         /// </summary>
-        DateTime ExecuteAt { get; set; }
+        DateTime? ExecuteAt { get; set; }
         /// <summary>
         /// 是否完成
         /// </summary>

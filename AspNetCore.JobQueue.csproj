@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>AspNetCore.JobQueue</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Authors>Jiangyi</Authors>
     <Company>Jiangyi</Company>
     <PackageDescription>JobQueue by netstandard2.0</PackageDescription>
