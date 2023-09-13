@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <PackageId>AspNetCore.JobQueue</PackageId>
-    <Version>2.0.1</Version>
+    <Version>2.0.3</Version>
     <Authors>Jiangyi</Authors>
     <Company>Jiangyi</Company>
-    <PackageDescription>JobQueue by netstandard2.0</PackageDescription>
+    <PackageDescription>JobQueue by netstandard2.0;net6.0</PackageDescription>
     <RepositoryUrl>https://github.com/jiangyimm/AspNetCore.JobQueue</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

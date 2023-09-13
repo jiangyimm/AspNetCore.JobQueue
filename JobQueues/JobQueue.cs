@@ -114,12 +114,14 @@ namespace AspNetCore.JobQueue.JobQueues
 #if NET6_0_OR_GREATER
                     await Parallel.ForEachAsync(records, _parallelOptions, ExecuteCommand);
 #else
-                    Parallel.ForEach(records, _parallelOptions, async (p) => await ExecuteCommand(p, _appCancellation));
+                    //var result = Parallel.ForEach(records, _parallelOptions, async (p) => await ExecuteCommand(p, _appCancellation));
+                    var tasks = records.Select(async p => await ExecuteCommand(p, _appCancellation));
+                    await Task.WhenAll(tasks);
 #endif
                 }
             }
 
-            async Task ExecuteCommand(TStorageRecord record, CancellationToken _)
+            async ValueTask ExecuteCommand(TStorageRecord record, CancellationToken _)
             {
                 try
                 {
