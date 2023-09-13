@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
 using AspNetCore.JobQueue.Abstractions;
@@ -12,17 +13,21 @@ namespace AspNetCore.JobQueue.JobStorages
     {
         internal static TStorageProvider StorageProvider { private get; set; }
         internal static CancellationToken AppCancellation { private get; set; }
+        internal static TimeSpan StaleJobPurgingTimeCycle { private set; get; } = TimeSpan.FromHours(1);
 
         static JobStorage()
         {
-            _ = StaleJobPurgingTask();
+            //_ = StaleJobPurgingTask();
+
+            //use longRunning task
+            Task.Factory.StartNew(StaleJobPurgingTask, TaskCreationOptions.LongRunning);
         }
 
         private static async Task StaleJobPurgingTask()
         {
             while (true)
             {
-                await Task.Delay(TimeSpan.FromHours(1));
+                await Task.Delay(StaleJobPurgingTimeCycle);
 
                 try
                 {
